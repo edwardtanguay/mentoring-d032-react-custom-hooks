@@ -1,12 +1,7 @@
-import { useState } from 'react';
+import { useToggle } from '../hooks/useToggle';
 
 export const PageUseToggle = () => {
-	const [userIsOnline, setUserIsOnline] = useState(false);
-	
-	const toggleUserIsOnline = () => {
-		const _userIsOnline = userIsOnline ? false : true;
-		setUserIsOnline(_userIsOnline);
-	}
+	const [userIsOnline, toggleUserIsOnline] = useToggle(false);	
 
 	return (
 		<div className="page_useToggle">
