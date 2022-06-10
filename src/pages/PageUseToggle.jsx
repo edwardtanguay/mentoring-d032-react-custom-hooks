@@ -1,6 +1,12 @@
+import { useState } from 'react';
+
 export const PageUseToggle = () => {
+	const [userIsOnline, setUserIsOnline] = useState(false);
 	
-	const userIsOnline = false;
+	const toggleUserIsOnline = () => {
+		const _userIsOnline = userIsOnline ? false : true;
+		setUserIsOnline(_userIsOnline);
+	}
 
 	return (
 		<div className="page_useToggle">
@@ -11,7 +17,7 @@ export const PageUseToggle = () => {
 				) : (
 						<p>USER IS OFFLINE</p>
 				)}
-				<button>Toggle User Status</button>
+				<button onClick={toggleUserIsOnline}>Toggle User Status</button>
 		</div>
 		</div>
 	)
