@@ -12,7 +12,9 @@ export const PageUseToggle = () => {
 				) : (
 						<p>USER IS OFFLINE</p>
 				)}
-				<button onClick={toggleUserIsOnline}>Toggle User Status</button>
+				<button onClick={() => toggleUserIsOnline()}>Toggle User Status</button>
+				<button onClick={() => toggleUserIsOnline(true)}>Make user online</button>
+				<button onClick={() => toggleUserIsOnline(false)}>Make user offline</button>
 		</div>
 		</div>
 	)
