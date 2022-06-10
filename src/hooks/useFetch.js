@@ -5,10 +5,12 @@ export const useFetch = (url) => {
 	const [items, setItems] = useState([]);
 
 	useEffect(() => {
-		(async () => {
-			setItems((await axios.get(url)).data);
-		})();
+		setTimeout(() => {
+			(async () => {
+				setItems((await axios.get(url)).data);
+			})();
+		}, 3000);
 	}, []);
 
-	return [items];
+	return [items, items.length === 0];
 };
