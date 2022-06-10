@@ -1,16 +1,10 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useFetch } from '../hooks/useFetch';
 
 const nounsUrl = 'https://edwardtanguay.netlify.app/share/germanNouns.json';
+const techBooksUrl = 'https://edwardtanguay.netlify.app/share/techBooks.json';
 
 export const PageUseFetch = () => {
-	const [nouns, setNouns] = useState([]);
-	
-	useEffect(() => {
-		(async () => {
-			setNouns((await axios.get(nounsUrl)).data);
-		})();
-	}, []);
+	const [nouns] = useFetch(nounsUrl);
 
 	return (
 		<div className="page_fetch">
